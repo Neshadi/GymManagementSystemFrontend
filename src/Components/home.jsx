@@ -1,7 +1,8 @@
-import React, {useState}from 'react';
+import { Button, Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button, Container } from '@material-ui/core';
-import gymVideo from '../Images/Gym1.mp4'; // Import the video
+import React, { useState } from 'react';
+import gymVideo from '../Assests/Gym1.mp4';
+
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {

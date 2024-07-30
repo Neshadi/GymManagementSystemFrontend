@@ -1,17 +1,17 @@
-import React, { useRef, useState } from 'react';
-import BookDemo from './demo';
 import { Button } from '@material-ui/core';
-import demo1Image from '../Images/demo9.jpg';
-import demo2Image from '../Images/demo2.jpg';
-import demo6Image from '../Images/demo1.jpg';
-import demo4Image from '../Images/demo7.jpg';
-import demo5Image from '../Images/demo4.jpg';
-import demo3Image from '../Images/demo3.jpg';
+import React, { useRef, useState } from 'react';
+import demo6Image from '../Assests/demo1.jpg';
+import demo2Image from '../Assests/demo2.jpg';
+import demo3Image from '../Assests/demo3.jpg';
+import demo5Image from '../Assests/demo4.jpg';
+import demo4Image from '../Assests/demo7.jpg';
+import demo1Image from '../Assests/demo9.jpg';
+import BookDemo from './demo';
 
 const demoListData = [
   {
     name: 'John Smith',
-    description: 'John is a certified personal trainer with a specialization in strength training and conditioning. With his extensive experience and knowledge, he helps clients achieve their fitness goals through personalized workout plans and motivation.',
+    description: 'John is a certified personal trainer with a specialization in strength training and conditioning.With his extensive experience and knowledge, he helps clients achieve their fitness goals through personalized workout plans and motivation.',
     imageUrl: demo1Image
   },
   {
@@ -69,7 +69,7 @@ const DemoList = () => {
   };
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '20px', paddingTop: '0px' }} id='demolist'>
+    <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '20px', paddingTop: '0px' }} id='demolist'><br/>
       <h1 style={{ textAlign: 'center', margin: '10px' }}>OUR DEMOS</h1>
 
       <div style={{ position: 'relative' }}>
@@ -119,7 +119,7 @@ const DemoList = () => {
       <br />
       <div style={{ textAlign: 'center' }}>
         {showBookDemo ? <BookDemo /> : (
-          <Button variant="contained" style={{ color: 'white !important', fontWeight: 'bold', backgroundColor: isHovered ? 'blue' : 'red', width: '25%' }} onClick={handleClick}
+          <Button variant="contained" style={{ color: 'white !important', fontWeight: 'bold', backgroundColor: isHovered ? 'red' : 'blue', width: '25%' }} onClick={handleClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
             Book Demo

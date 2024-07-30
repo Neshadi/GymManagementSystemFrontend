@@ -1,0 +1,70 @@
+.root {
+    padding: 16px 0; /* Adjust for responsiveness */
+    background-color: #f0f0f0; /* Adjusted default background */
+    min-height: 600px;
+  }
+  
+  .title {
+    margin-bottom: 32px; /* Adjusted spacing */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .table {
+    min-width: 650px; /* Minimum width for larger screens */
+    width: 100%; /* Full width for smaller screens */
+  }
+  
+  .tableHead {
+    background-color: #3f51b5; /* Example color */
+  }
+  
+  .tableCellHead {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .tableCell {
+    text-align: center;
+  }
+  
+  .classType {
+    color: white;
+    padding: 8px; /* Adjust padding for responsiveness */
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .yoga {
+    background-color: #264653;
+  }
+  
+  .hiit {
+    background-color: #2a9d8f;
+  }
+  
+  .pilates {
+    background-color: #e9c46a;
+  }
+  
+  .cardio {
+    background-color: #f4a261;
+  }
+  
+  .rest {
+    background-color: #e76f51;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .tableCellHead, .tableCell {
+      font-size: 0.8rem; /* Smaller text on small screens */
+    }
+    
+    .title {
+      font-size: 1.5rem; /* Smaller title on small screens */
+    }
+  }
+  

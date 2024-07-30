@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import React, { useRef, useState } from 'react';
 // import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -390,7 +390,7 @@ const BookDemo = () => {
           <button
             type="submit"
             style={{
-              backgroundColor: isHovered ? 'blue' : 'red',
+              backgroundColor: isHovered ? 'green' : 'blue',
               color: 'white',
               width: '105%',
               padding: '10px',
@@ -412,7 +412,7 @@ const BookDemo = () => {
         <button
           type="button"
           style={{
-            backgroundColor: isClicked ? 'blue' : 'red',
+            backgroundColor: isClicked ? 'green' : 'blue',
             color: 'white',
             width: '105%',
             padding: '10px',

@@ -1,39 +1,15 @@
-import React, { useState } from 'react';
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import SignUp from './sign-up';
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
+import {
+  Avatar, Box, Button, Checkbox, Container, CssBaseline, Dialog, DialogContent, DialogTitle, FormControlLabel, Grid, IconButton, Link, TextField, Typography,
+} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import IconButton from '@material-ui/core/IconButton';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import axios from 'axios';
+import React, { useState } from 'react';
 import HomePage from './home';
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    // marginTop: theme.spacing(0),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-   
-  },
-  avatar: {
-    // margin: theme.spacing(0),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%',
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
+import './login.css';
+import SignUp from './sign-up';
 
 const LoginPage = ({ handleClose }) => {
-  const classes = useStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
@@ -44,7 +20,9 @@ const LoginPage = ({ handleClose }) => {
     try {
       const response = await axios.get('http://localhost:8080/user/findAll');
       const users = response.data;
-      const user = users.find((user) => (user.email === email || user.fullName === email) && user.password === password);
+      const user = users.find(
+        (user) => (user.email === email || user.fullName === email) && user.password === password
+      );
 
       if (user) {
         handleClose(); // Close login dialog
@@ -68,17 +46,17 @@ const LoginPage = ({ handleClose }) => {
   };
 
   return (
-    <Container component="main" maxWidth="xs"   style={{ padding:'0px '}} id='login'>
+    <Container component="main" maxWidth="xs" style={{ padding: '0px ' }} id="login">
       <CssBaseline />
-      <div className={classes.paper} style={{ padding:'0px '}}>
-        <Avatar className={classes.avatar} style={{color:'white',background:'red'}}>
+      <div className="paper" style={{ padding: '0px ' }}>
+        <Avatar className="avatar">
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5" fontWeight="bold"  >
+        <Typography component="h1" variant="h5" fontWeight="bold">
           Login
         </Typography>
-        {error && (<Typography color="error">{error}</Typography>)}
-        <form className={classes.form} noValidate onSubmit={handleSubmit}>
+        {error && <Typography color="error">{error}</Typography>}
+        <form className="form" noValidate onSubmit={handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -105,18 +83,8 @@ const LoginPage = ({ handleClose }) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            style={{color:'white',background:'red'}}
-          >
+          <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
+          <Button type="submit" fullWidth variant="contained" className="submit">
             Log In
           </Button>
           <Grid container>
@@ -146,7 +114,7 @@ const LoginPage = ({ handleClose }) => {
       <Dialog open={open} onClose={handleSignupClose} aria-labelledby="form-dialog-title">
         <DialogTitle disableTypography>
           <div style={{ position: 'absolute', top: 0, right: 0 }}>
-            <IconButton style={{ color: 'black' }} onClick={handleSignupClose} aria-label="close">
+            <IconButton style={{ color: 'white' }} onClick={handleSignupClose} aria-label="close">
               <CloseIcon />
             </IconButton>
           </div>

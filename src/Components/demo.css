@@ -1,0 +1,62 @@
+.demo-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.demo-title {
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.label {
+    text-align: left;
+    display: block;
+}
+
+.input-text,
+.input-date,
+.input-select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.button {
+    background-color: red;
+    color: white;
+    width: 105%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: blue; /* Change to blue on hover */
+}
+
+.search-results {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+    margin-top: 4px;
+    z-index: 1;
+}
+
+.search-result-item {
+    padding: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+.message {
+    text-align: center;
+}

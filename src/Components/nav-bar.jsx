@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
-import { makeStyles } from '@material-ui/core/styles';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import LoginPage from './login';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import CloseIcon from '@material-ui/icons/Close';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import IconButton from '@material-ui/core/IconButton';
+import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
+import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import LoginPage from './login';
 
 const theme = createTheme({
   palette: {
@@ -27,6 +27,8 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: 'transparent',
+
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -65,7 +67,7 @@ const Navbar = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <AppBar position="static" color="transparent">
+        <AppBar position="static" >
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
               <FitnessCenterIcon />
@@ -75,12 +77,24 @@ const Navbar = () => {
               PowerZone
             </Typography>
             <div className={classes.navbarButtons}>
-              <Button color="inherit" className={classes.navbarButton} href="#home">Home</Button>
-              <Button color="inherit" className={classes.navbarButton} href="#about">About Us</Button>
-              <Button color="inherit" className={classes.navbarButton} href="#services">Services</Button>
-              <Button color="inherit" className={classes.navbarButton} href="#timetable">Schedule</Button>
-              <Button color="inherit" className={classes.navbarButton} href="#pricing">Pricing</Button>
-              <Button color="inherit" className={classes.navbarButton} href="#contact">Contact</Button>
+            <Link to="/" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>Home</Button>
+              </Link>
+              <Link to="/about" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>About Us</Button>
+              </Link>
+              <Link to="/services" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>Services</Button>
+              </Link>
+              <Link to="/time-table" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>Schedule</Button>
+              </Link>
+              <Link to="/pricing-plan" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>Pricing</Button>
+              </Link>
+              <Link to="/contact" className={classes.link}>
+                <Button color="inherit" className={classes.navbarButton}>Contact</Button>
+              </Link>
               <Button color="inherit" className={classes.navbarButton} onClick={handleLoginOpen}>Login</Button>
             </div>
           </Toolbar>

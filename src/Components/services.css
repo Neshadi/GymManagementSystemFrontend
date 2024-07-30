@@ -1,0 +1,32 @@
+/* Services.css */
+.root {
+    padding: 32px 0; /* Equivalent to theme.spacing(4, 0) */
+    background-color: black; /* Adjust this to match your theme */
+    min-height: 555px;
+  }
+  
+  .title {
+    margin-bottom: 32px; /* Equivalent to theme.spacing(4) */
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .media {
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the card takes up full height */
+    transition: transform 0.3s ease; /* Add transition to transform property */
+  }
+  
+  .card:hover {
+    transform: scale(1.15); /* Scale up the card slightly on hover */
+  }
+  
+  .content {
+    flex-grow: 1; /* Allow content to grow vertically */
+  }
+  

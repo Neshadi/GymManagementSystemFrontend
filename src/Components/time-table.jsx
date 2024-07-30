@@ -1,70 +1,8 @@
+import { Container, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Container, Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(4, 0),
-    backgroundColor: theme.palette.background.default,
-    minHeight:'600px',
-    transition: 'transform 0.3s ease', 
-    '&:hover': {
-      transform: 'scale(1.15)', 
-    },
-  },
-  title: {
-    marginBottom: theme.spacing(4),
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  table: {
-    minWidth: 650,
-    // transition: 'transform 0.3s ease', 
-    // '&:hover': {
-    //   transform: 'scale(1.05)', 
-    // },
-  },
-  tableHead: {
-    // backgroundColor: theme.palette.info.main,
-  },
-  tableCellHead: {
-    color: theme.palette.common.white,
-    //  backgroundColor: theme.palette.info.main,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  tableCell: {
-    textAlign: 'center',
-    // color: theme.palette.common.white,
-  },
-  classType: {
-    color: theme.palette.common.white,
-    padding: theme.spacing(1),
-    borderRadius: 4,
-    display: 'inline-block',
-    width: '100%',
-  },
-  yoga: {
-    backgroundColor: '#264653',
-  },
-  hiit: {
-    backgroundColor: '#2a9d8f',
-  },
-  pilates: {
-    backgroundColor: '#e9c46a',
-  },
-  cardio: {
-    backgroundColor: '#f4a261',
-  },
-  rest: {
-    // backgroundColor: theme.palette.grey[500],
-    backgroundColor: '#e76f51'
-  },
-}));
+import './time-table.css';
 
 const GymTimeTable = () => {
-  const classes = useStyles();
-
   const timetable = [
     { time: '08:00 - 10:00 AM', Monday: 'Yoga', Tuesday: 'Pilates', Wednesday: 'Yoga', Thursday: 'Pilates', Friday: 'Yoga', Saturday: 'Pilates', Sunday: 'Rest' },
     { time: '10:00 - 12:00 PM', Monday: 'HIIT', Tuesday: 'Cardio', Wednesday: 'HIIT', Thursday: 'Cardio', Friday: 'HIIT', Saturday: 'Cardio', Sunday: 'Rest' },
@@ -78,63 +16,63 @@ const GymTimeTable = () => {
   const getClassTypeClass = (className) => {
     switch (className) {
       case 'Yoga':
-        return classes.yoga;
+        return 'yoga';
       case 'HIIT':
-        return classes.hiit;
+        return 'hiit';
       case 'Pilates':
-        return classes.pilates;
+        return 'pilates';
       case 'Cardio':
-        return classes.cardio;
+        return 'cardio';
       case 'Rest':
-        return classes.rest;
+        return 'rest';
       default:
         return '';
     }
   };
 
   return (
-    <div className={classes.root} id="timetable">
+    <div className="root" id="timetable">
       <Container maxWidth="md">
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h4" className="title">
           FITNESS SCHEDULE
         </Typography>
         <Paper>
-          <Table className={classes.table} aria-label="gym timetable">
-            <TableHead className={classes.tableHead}>
+          <Table className="table" aria-label="gym timetable">
+            <TableHead className="tableHead">
               <TableRow>
-                <TableCell className={classes.tableCellHead}>Time</TableCell>
-                <TableCell className={classes.tableCellHead}>Monday</TableCell>
-                <TableCell className={classes.tableCellHead}>Tuesday</TableCell>
-                <TableCell className={classes.tableCellHead}>Wednesday</TableCell>
-                <TableCell className={classes.tableCellHead}>Thursday</TableCell>
-                <TableCell className={classes.tableCellHead}>Friday</TableCell>
-                <TableCell className={classes.tableCellHead}>Saturday</TableCell>
-                <TableCell className={classes.tableCellHead}>Sunday</TableCell>
+                <TableCell className="tableCellHead">Time</TableCell>
+                <TableCell className="tableCellHead">Monday</TableCell>
+                <TableCell className="tableCellHead">Tuesday</TableCell>
+                <TableCell className="tableCellHead">Wednesday</TableCell>
+                <TableCell className="tableCellHead">Thursday</TableCell>
+                <TableCell className="tableCellHead">Friday</TableCell>
+                <TableCell className="tableCellHead">Saturday</TableCell>
+                <TableCell className="tableCellHead">Sunday</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {timetable.map((slot, index) => (
                 <TableRow key={index}>
-                  <TableCell className={classes.tableCell}>{slot.time}</TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Monday)}`}>
+                  <TableCell className="tableCell">{slot.time}</TableCell>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Monday)}`}>
                     {slot.Monday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Tuesday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Tuesday)}`}>
                     {slot.Tuesday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Wednesday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Wednesday)}`}>
                     {slot.Wednesday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Thursday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Thursday)}`}>
                     {slot.Thursday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Friday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Friday)}`}>
                     {slot.Friday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Saturday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Saturday)}`}>
                     {slot.Saturday}
                   </TableCell>
-                  <TableCell className={`${classes.tableCell} ${getClassTypeClass(slot.Sunday)}`}>
+                  <TableCell className={`tableCell ${getClassTypeClass(slot.Sunday)}`}>
                     {slot.Sunday}
                   </TableCell>
                 </TableRow>

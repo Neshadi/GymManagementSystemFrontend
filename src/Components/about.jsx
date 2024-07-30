@@ -1,11 +1,13 @@
-import React from 'react';
+import { Card, CardContent, CardMedia, Container, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Typography, Grid, Card, CardMedia, CardContent } from '@material-ui/core';
+import React from 'react';
+import Expert_TrainnersImage from '../Assests/Expert_Trainners.jpg';
+import Gym_FacilityImage from '../Assests/Gym_Facility.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(4, 0),
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.black,
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -99,7 +101,8 @@ const About = () => {
             <Card className={classes.card}>
               <CardMedia
                 className={classes.media}
-                image="https://etimg.etb2bimg.com/photo/65573978.cms"
+                // image="https://etimg.etb2bimg.com/photo/65573978.cms"
+                image={Gym_FacilityImage}
                 title="Gym Facility"
               />
               <CardContent style={{background:'black'}}>
@@ -120,7 +123,8 @@ const About = () => {
             <Card className={classes.card}>
               <CardMedia
                 className={classes.media}
-                image="https://www.fitbase.com/blog/wp-content/uploads/2020/01/the-most-influential-fitness-trainers-ever.jpg"
+                // image="https://www.fitbase.com/blog/wp-content/uploads/2020/01/the-most-influential-fitness-trainers-ever.jpg"
+                image ={Expert_TrainnersImage}
                 title="Our Trainers"
               />
               <CardContent style={{background:'black'}}>

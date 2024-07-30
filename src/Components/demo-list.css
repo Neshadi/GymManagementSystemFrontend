@@ -1,0 +1,72 @@
+.demo-list {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px;
+    padding-top: 0;
+}
+
+.demo-title {
+    text-align: center;
+    margin: 10px;
+}
+
+.demo-card {
+    flex: 0 0 auto;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 435px;
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.demo-card img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.demo-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+.scroll-button span {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.book-demo-button {
+    color: white;
+    font-weight: bold;
+    width: 25%;
+}

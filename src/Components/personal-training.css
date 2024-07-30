@@ -1,0 +1,38 @@
+.personal-training-root {
+    padding: 32px 0;
+  }
+  
+  .personal-training-title {
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .personal-training-section {
+    margin-bottom: 32px;
+  }
+  
+  .personal-training-section-title {
+    margin-bottom: 16px;
+  }
+  
+  .personal-training-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .personal-training-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .personal-training-media {
+    height: 200px;
+  }
+  
+  .personal-training-video {
+    width: 100%;
+    height: auto;
+  }
+  
