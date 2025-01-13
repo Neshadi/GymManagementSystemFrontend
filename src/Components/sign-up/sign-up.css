@@ -1,0 +1,82 @@
+.paper {
+
+  /* background-color: #ffffff; */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  /* width: 90%; */
+  max-width: 280px;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar {
+  /* margin: 0; */
+  background-color: #f50057; 
+  margin-left: 140px;
+  margin-right: 140px; 
+}
+
+.form {
+  width: 100%;
+  margin-top: 0px; 
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+
+.form-group input {
+  max-width: 90%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.submit {
+  margin: 24px 0 16px; /* Adjust based on theme spacing */
+}
+
+.signup-button {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+.errorText {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 8px; /* Adjust based on theme spacing */
+}
+
+.successPopup {
+  background-color: #ffff00;
+  border-radius: 20px;
+}

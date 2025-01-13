@@ -1,0 +1,75 @@
+.footer-root {
+  background-color: #000000;
+  color: #fff;
+  padding: 52px 0;
+}
+
+.footer-socialIcons {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.footer-socialIcons .MuiSvgIcon-root {
+  color: #7300de; /* Set the color of the icons */
+}
+
+
+.footer-footerLinks {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-contactDetails {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.footer-contactText {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.footer-footerBottom {
+  margin-top: 32px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-item {
+  /* flex: 1; */
+  max-width: 450px;
+  /* padding: 16px; */
+}
+
+.footer-item h6 {
+  margin-bottom: 16px;
+}
+
+.navbarButton {
+  text-decoration: none;
+}
+
+.navbarButton:hover {
+  text-decoration: underline;
+}
+
+.aboutUsTitle {
+  text-align: center;
+}
+

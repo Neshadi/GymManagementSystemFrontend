@@ -1,26 +1,30 @@
 .root {
   padding: 32px 0;
-  background-color: #f5f5f5; 
+  background-color: #121212; 
   min-height: 560px;
 }
 
 .title {
-  margin-bottom: 32px;
+  /* margin-bottom: 600px; */
   text-align: center;
   font-weight: bold;
 }
 
 .formContainer {
   width: 100%;
+  padding-top: 242px;
 }
 
 .contactContainer {
   width: 100%;
   text-align: left;
+  padding-top: 142px;
 }
 
 .form {
   width: 100%;
+  padding-top: 42px;
+  padding-right: 142px;
 }
 
 .textField {
@@ -32,7 +36,9 @@
 }
 
 .contactDetails {
-  margin-top: 32px; 
+  /* margin-top: 32px; */
+  padding-top: 102px;
+  padding-left: 142px;
 }
 
 .contactItem {
@@ -43,14 +49,14 @@
 
 .contactLabel {
   font-weight: bold;
-  font-size: 1.2rem; /* Adjust font size for readability */
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  flex: 0 0 120px; /* Adjust label width */
+  flex: 0 0 120px; 
 }
 
 .contactValue {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   flex-grow: 2; 
 }
 

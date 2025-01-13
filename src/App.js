@@ -1,15 +1,17 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import About from './Components/about';
-import ContactUs from './Components/contact';
-import DemoList from './Components/demo-list';
-import Footer from './Components/footer';
-import HomePage from './Components/home';
-import Navbar from './Components/nav-bar';
-import PersonalTraining from './Components/personal-training';
-import PricingPlan from './Components/pricing-plan';
-import Services from './Components/services';
-import GymTimeTable from './Components/time-table';
+import About from './Components/about/about';
+import ContactUs from './Components/contact/contact';
+import DemoList from './Components/demo-list/demo-list';
+import Footer from './Components/footer/footer';
+import HomePage from './Components/home/home';
+import Login from './Components/login/login';
+import Navbar from './Components/nav-bar/nav-bar';
+import PersonalTraining from './Components/personal-training/personal-training';
+import PricingPlan from './Components/pricing-plan/pricing-plan';
+import Services from './Components/services/services';
+import SignUp from './Components/sign-up/sign-up';
+import GymTimeTable from './Components/time-table/time-table';
 
 function App() {
   return (
@@ -27,12 +29,21 @@ function App() {
           <Route path="/services" element={<Services/>} />
           <Route path="/time-table" element={<GymTimeTable/>} />
           <Route path="/pricing-plan" element={<PricingPlan/>} />
+          <Route path="/sign-up" element={<SignUp/>} />
+          <Route path="/login" element={<Login/>} />
           
           {/* Render the main components on the homepage route */}
           <Route path="/" element={
             <>
               <HomePage />
               <DemoList />
+              <About />
+              <Services/>
+              <GymTimeTable/>
+              <PricingPlan/>
+              <ContactUs />
+
+
             </>
           } />
         </Routes>
