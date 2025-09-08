@@ -1,75 +1,63 @@
 .root {
-  padding: 32px 0;
-  background-color: #121212; 
-  min-height: 560px;
+  padding: 32px 16px;
+  /* background-color: #121212; */
+  color: white;
+  min-height: 600px;
 }
 
-/* TextField input text */
-.textField input {
-  color: white !important;
+/* Description */
+.description {
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #ccc;
 }
 
-/* TextField label */
-.textField label {
-  color: white !important;
-}
-
-/* TextField outline border */
-.textField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-  border-color: white !important;
-}
-
-/* Change border color on hover */
-.textField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-  border-color: #fff !important;
-}
-
-/* Change border color when focused */
-.textField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #fff !important;
-}
-
-/* Placeholder text color */
-.textField input::placeholder {
-  color: #ccc !important;
-}
-
-.title {
-  /* margin-bottom: 600px; */
-  text-align: center;
-  font-weight: bold;
-}
-
-.formContainer {
-  width: 100%;
-  padding-top: 242px;
-}
-
+/* Form & Contact sections */
+.formContainer,
 .contactContainer {
   width: 100%;
-  text-align: left;
-  padding-top: 142px;
 }
 
 .form {
   width: 100%;
-  padding-top: 42px;
-  padding-right: 142px;
-  border-color: white;
+}
+
+.textField input {
+  color: white !important;
+}
+
+.textField label {
+  color: white !important;
+}
+
+.textField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.textField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.textField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.textField input::placeholder {
+  color: #ccc !important;
 }
 
 .textField {
-  margin-bottom: 16px; 
+  margin-bottom: 16px;
 }
 
 .submitButton {
   margin: 16px 0;
+  font-size: 1rem;
 }
 
 .contactDetails {
-  /* margin-top: 32px; */
-  padding-top: 102px;
-  padding-left: 142px;
+  margin-bottom: 20px;
 }
 
 .contactItem {
@@ -78,19 +66,46 @@
   margin-bottom: 16px;
 }
 
-.contactLabel {
-  font-weight: bold;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  flex: 0 0 120px; 
-}
-
-.contactValue {
-  font-size: 1.5rem;
-  flex-grow: 2; 
-}
-
-.icon {
+.contactItem .icon {
   margin-right: 8px;
+  color: red;
+}
+
+.mapContainer iframe {
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .formContainer,
+  .contactContainer {
+    padding: 0;
+  }
+  .form {
+    padding: 0;
+  }
+  .contactItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contactItem .icon {
+    margin-bottom: 4px;
+  }
+  .mapContainer iframe {
+    height: 200px;
+  }
 }

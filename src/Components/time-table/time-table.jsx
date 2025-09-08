@@ -1,4 +1,4 @@
-import { Container, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@material-ui/core';
+import { Container, Paper, Table, TableBody, TableCell, TableHead, TableRow, Typography,TableContainer} from '@material-ui/core';
 import React from 'react';
 import './time-table.css';
 
@@ -33,55 +33,42 @@ const GymTimeTable = () => {
   return (
     <div className="root" id="timetable">
       <Container maxWidth="md">
-        <Typography variant="h4" className="title">
-          FITNESS SCHEDULE
-        </Typography>
-        <br></br>
-        <Paper>
-          <Table className="table" aria-label="gym timetable">
-            <TableHead className="tableHead">
-              <TableRow>
-                <TableCell className="tableCellHead">Time</TableCell>
-                <TableCell className="tableCellHead">Monday</TableCell>
-                <TableCell className="tableCellHead">Tuesday</TableCell>
-                <TableCell className="tableCellHead">Wednesday</TableCell>
-                <TableCell className="tableCellHead">Thursday</TableCell>
-                <TableCell className="tableCellHead">Friday</TableCell>
-                <TableCell className="tableCellHead">Saturday</TableCell>
-                <TableCell className="tableCellHead">Sunday</TableCell>
+      <Typography variant="h4" className="title">
+        FITNESS SCHEDULE
+      </Typography>
+      <br />
+      <TableContainer component={Paper} className="tableContainer">
+        <Table className="table" aria-label="gym timetable">
+          <TableHead className="tableHead">
+            <TableRow>
+              <TableCell className="tableCellHead">Time</TableCell>
+              <TableCell className="tableCellHead">Monday</TableCell>
+              <TableCell className="tableCellHead">Tuesday</TableCell>
+              <TableCell className="tableCellHead">Wednesday</TableCell>
+              <TableCell className="tableCellHead">Thursday</TableCell>
+              <TableCell className="tableCellHead">Friday</TableCell>
+              <TableCell className="tableCellHead">Saturday</TableCell>
+              <TableCell className="tableCellHead">Sunday</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {timetable.map((slot, index) => (
+              <TableRow key={index}>
+                <TableCell className="tableCell">{slot.time}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Monday)}`}>{slot.Monday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Tuesday)}`}>{slot.Tuesday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Wednesday)}`}>{slot.Wednesday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Thursday)}`}>{slot.Thursday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Friday)}`}>{slot.Friday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Saturday)}`}>{slot.Saturday}</TableCell>
+                <TableCell className={`tableCell ${getClassTypeClass(slot.Sunday)}`}>{slot.Sunday}</TableCell>
               </TableRow>
-            </TableHead>
-            <TableBody>
-              {timetable.map((slot, index) => (
-                <TableRow key={index}>
-                  <TableCell className="tableCell">{slot.time}</TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Monday)}`}>
-                    {slot.Monday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Tuesday)}`}>
-                    {slot.Tuesday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Wednesday)}`}>
-                    {slot.Wednesday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Thursday)}`}>
-                    {slot.Thursday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Friday)}`}>
-                    {slot.Friday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Saturday)}`}>
-                    {slot.Saturday}
-                  </TableCell>
-                  <TableCell className={`tableCell ${getClassTypeClass(slot.Sunday)}`}>
-                    {slot.Sunday}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
-      </Container>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Container>
+
     </div>
   );
 };

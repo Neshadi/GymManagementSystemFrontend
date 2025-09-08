@@ -1,21 +1,25 @@
+import React, { useState } from "react";
 import {
   AppBar,
-  Button,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  ThemeProvider,
   Toolbar,
   Typography,
+  IconButton,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  ThemeProvider,
   createTheme,
-  makeStyles,
+  useMediaQuery,
+  Box,
 } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import MenuIcon from "@material-ui/icons/Menu";
 import FitnessCenterIcon from "@material-ui/icons/FitnessCenter";
-import React, { useState } from "react";
+import CloseIcon from "@material-ui/icons/Close";
 import { Link } from "react-router-dom";
 import LoginPage from "../login/login";
+import { makeStyles } from "@material-ui/core/styles";
 
 const theme = createTheme({
   palette: {
@@ -32,141 +36,134 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
     display: "flex",
     alignItems: "center",
-  },
-  navbarButtons: {
-    display: "flex",
-    justifyContent: "flex-end",
-    width: "100%",
-  },
-  navbarButton: {
-    marginLeft: theme.spacing(2),
-  },
-  dialogContent: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 0, // Removed padding here
-  },
-  dialogPaper: {
-    borderRadius: "10px",
-    height: "90vh",
-    width: "60vh",
-    padding: 0, // Removed padding here
+    fontSize: "1.2rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    },
   },
   link: {
     textDecoration: "none",
     color: "inherit",
   },
-  dialogTitle: {
+  navbarButtons: {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 0,
+    [theme.breakpoints.down("sm")]: {
+      display: "none", // hide buttons on small screens
+    },
+  },
+  menuIcon: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "block", // show hamburger only on small screens
+    },
+  },
+  drawerList: {
+    width: 250,
+    [theme.breakpoints.down("xs")]: {
+      width: "100%", // full screen drawer on extra-small devices
+    },
   },
 }));
 
 const Navbar = () => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  // Detect screen size
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
 
   const handleLoginOpen = () => {
-    setOpen(true);
+    setLoginOpen(true);
   };
 
   const handleLoginClose = () => {
-    console.log("Closing login popup");
-    setOpen(false);
+    setLoginOpen(false);
   };
+
+  const navLinks = [
+    { text: "Home", path: "/" },
+    { text: "About Us", path: "/about" },
+    { text: "Services", path: "/services" },
+    { text: "Schedule", path: "/time-table" },
+    { text: "Pricing", path: "/pricing-plan" },
+    { text: "Contact", path: "/contact" },
+  ];
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "#000000ff" }}>
+        <AppBar position="static" style={{ backgroundColor: "#000000ff" }}>
           <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <FitnessCenterIcon />
-            </IconButton>
+            <FitnessCenterIcon style={{ marginRight: "10px" }} />
             <Typography variant="h6" className={classes.title}>
-              <FitnessCenterIcon style={{ marginRight: "10px" }} />
               PowerZone
             </Typography>
+
+            {/* Desktop buttons */}
             <div className={classes.navbarButtons}>
-              <Link to="/" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  Home
-                </Button>
-              </Link>
-              <Link to="/about" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  About Us
-                </Button>
-              </Link>
-              <Link to="/services" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  Services
-                </Button>
-              </Link>
-              <Link to="/time-table" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  Schedule
-                </Button>
-              </Link>
-              <Link to="/pricing-plan" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  Pricing
-                </Button>
-              </Link>
-              <Link to="/contact" className={classes.link}>
-                <Button color="inherit" className={classes.navbarButton}>
-                  Contact
-                </Button>
-              </Link>
-              <Button color="inherit" className={classes.navbarButton} onClick={handleLoginOpen}>
+              {navLinks.map((link) => (
+                <Link to={link.path} key={link.text} className={classes.link}>
+                  <Button color="inherit">{link.text}</Button>
+                </Link>
+              ))}
+              <Button color="inherit" onClick={handleLoginOpen}>
                 Login
               </Button>
             </div>
+
+            {/* Hamburger icon for mobile */}
+            {isMobile && (
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="menu"
+                className={classes.menuIcon}
+                onClick={handleDrawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
           </Toolbar>
         </AppBar>
-        <Dialog
-          open={open}
-          onClose={handleLoginClose}
-          aria-labelledby="form-dialog-title"
-          classes={{ paper: classes.dialogPaper }}
-        >
-          <DialogTitle className={classes.dialogTitle} disableTypography>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <IconButton
-                style={{ color: "red" }}
-                onClick={handleLoginClose}
-                aria-label="close"
-              >
+
+        {/* Drawer for mobile menu */}
+        <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
+          <div className={classes.drawerList} role="presentation">
+            <Box display="flex" justifyContent="flex-end">
+              <IconButton onClick={handleDrawerToggle}>
                 <CloseIcon />
               </IconButton>
-            </div>
-          </DialogTitle>
-          <DialogContent className={classes.dialogContent}>
-            <LoginPage handleLoginClose={handleLoginClose} />
-          </DialogContent>
-        </Dialog>
+            </Box>
+            <List>
+              {navLinks.map((link) => (
+                <ListItem
+                  button
+                  key={link.text}
+                  component={Link}
+                  to={link.path}
+                  onClick={handleDrawerToggle}
+                >
+                  <ListItemText primary={link.text} />
+                </ListItem>
+              ))}
+              <ListItem button onClick={handleLoginOpen}>
+                <ListItemText primary="Login" />
+              </ListItem>
+            </List>
+          </div>
+        </Drawer>
+
+        {/* Login Dialog */}
+        {loginOpen && <LoginPage handleLoginClose={handleLoginClose} />}
       </div>
     </ThemeProvider>
   );

@@ -6,16 +6,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './footer.css';
 
-
 const Footer = () => {
- 
-
   return (
     <div className="footer-root">
       <Container maxWidth="lg">
         <div className="footer-container">
+          {/* Site Map */}
           <div className="footer-item">
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom className="footer-title">
               Site Map
             </Typography>
             <div className="footer-footerLinks">
@@ -27,17 +25,19 @@ const Footer = () => {
               <Link to="/contact" className="navbarButton">Contact</Link>
             </div>
           </div>
+
+          {/* About Us */}
           <div className="footer-item">
-          <Typography variant="h6" gutterBottom className="aboutUsTitle">
-            About Us
-          </Typography>
-            <Typography variant="body1" className="aboutUsTitle">
-            Welcome to the pioneering force in fitness and wellness in Sri Lanka. 
-            We proudly stand as the country’s first and only medically oriented gym, 
-            dedicated to transforming the landscape of fitness through a unique, health-focused approach.
+            <Typography variant="h6" gutterBottom className="footer-title">
+              About Us
             </Typography>
-            <div className="footer-socialIcons" >
-              <IconButton aria-label="Facebook" >
+            <Typography variant="body1" className="aboutUsText">
+              Welcome to the pioneering force in fitness and wellness in Sri Lanka. 
+              We proudly stand as the country’s first and only medically oriented gym, 
+              dedicated to transforming the landscape of fitness through a unique, health-focused approach.
+            </Typography>
+            <div className="footer-socialIcons">
+              <IconButton aria-label="Facebook">
                 <FacebookIcon />
               </IconButton>
               <IconButton aria-label="Instagram">
@@ -48,11 +48,13 @@ const Footer = () => {
               </IconButton>
             </div>
           </div>
+
+          {/* Contact */}
           <div className="footer-item">
-            <Typography variant="h6" gutterBottom className="aboutUsTitle">
+            <Typography variant="h6" gutterBottom className="footer-title">
               Contact Us
             </Typography>
-            <div className="footer-contactDetails" >
+            <div className="footer-contactDetails">
               <Typography variant="body1" className="footer-contactText">
                 Telephone: +94703546172
               </Typography>
@@ -68,9 +70,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-footerBottom" >
+
+        {/* Footer Bottom */}
+        <div className="footer-footerBottom">
           <Typography variant="body2" color="inherit">
-            &copy; {new Date().getFullYear()} Your Gym. All rights reserved.
+            &copy; {new Date().getFullYear()} PowerZone. All rights reserved.
           </Typography>
         </div>
       </Container>
