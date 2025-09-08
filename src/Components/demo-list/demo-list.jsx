@@ -103,7 +103,7 @@ const DemoList = () => {
             >
               <img src={demo.imageUrl} alt={demo.name} style={{ width: '70%', height: '70%', objectFit: 'cover' }} />
               <h3 style={{ marginBottom: '8px', textAlign: 'center' }}>{demo.name}</h3>
-              <p style={{ marginBottom: '8px', textAlign: 'center' }}>{demo.description}</p>
+              <p style={{ marginBottom: '8px', textAlign: 'center', textAlign: 'justify' }}>{demo.description}</p>
             </div>
           ))}
         </div>

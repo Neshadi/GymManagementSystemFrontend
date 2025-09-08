@@ -4,6 +4,36 @@
   min-height: 560px;
 }
 
+/* TextField input text */
+.textField input {
+  color: white !important;
+}
+
+/* TextField label */
+.textField label {
+  color: white !important;
+}
+
+/* TextField outline border */
+.textField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+/* Change border color on hover */
+.textField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+/* Change border color when focused */
+.textField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+/* Placeholder text color */
+.textField input::placeholder {
+  color: #ccc !important;
+}
+
 .title {
   /* margin-bottom: 600px; */
   text-align: center;
@@ -25,6 +55,7 @@
   width: 100%;
   padding-top: 42px;
   padding-right: 142px;
+  border-color: white;
 }
 
 .textField {

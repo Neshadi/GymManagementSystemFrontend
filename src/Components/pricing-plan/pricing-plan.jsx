@@ -21,7 +21,7 @@ const PricingPlan = () => {
         <Grid container spacing={4} justifyContent="center">
           {plans.map((plan, index) => (
             <Grid item key={index}>
-              <Card className="card" style={{ background: 'darkred' }}>
+              <Card className="card" style={{ background: 'linear-gradient(135deg, #0a5fa5ff 0%, #f321f3ff 100%)', color: 'white' }}>
                 <CardContent className="cardContent">
                   <Typography variant="h5" gutterBottom className="title1">{plan.title}</Typography>
                   <Typography variant="h6" className="price" style={{ color: 'yellow' }}>{plan.price}</Typography>
@@ -29,7 +29,7 @@ const PricingPlan = () => {
                   <ul className="featuresList">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="featureItem">
-                        <CheckIcon className="featureIcon" style={{ color: 'blue' }} />
+                        <CheckIcon className="featureIcon" style={{ color: 'red' }} />
                         <Typography style={{ textAlign: 'left' }}>{feature}</Typography>
                       </li>
                     ))}

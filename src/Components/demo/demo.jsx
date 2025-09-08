@@ -367,7 +367,7 @@ const BookDemo = () => {
   
   
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px' }} id='demo'>
+    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px'}} id='demo'>
       <h1>Book a Demo</h1>
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: '10px' }}>

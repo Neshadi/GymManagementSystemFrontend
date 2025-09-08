@@ -88,7 +88,7 @@ const Navbar = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <AppBar position="static" color="transparent" style={{ boxShadow: "none" }}>
+      <AppBar position="static" style={{ backgroundColor: "#000000ff" }}>
           <Toolbar>
             <IconButton
               edge="start"

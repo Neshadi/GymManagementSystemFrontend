@@ -6,13 +6,13 @@ import gymVideo from '../../Assests/Gym1.mp4';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(6, 0, 4),
-    },
+  position: 'relative',
+  backgroundColor: '#000', // Use black directly
+  padding: theme.spacing(8, 0, 6),
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(6, 0, 4),
   },
+},
   heroVideo: {
     position: 'absolute',
     top: 0,

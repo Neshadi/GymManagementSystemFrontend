@@ -51,7 +51,7 @@ const ContactUs = () => {
                 className="textField"
                 value={fullName}
                 onChange={(e) => setName(e.target.value)}
-              />
+              /><br></br>
               <TextField
                 variant="outlined"
                 label="Email"
@@ -60,7 +60,7 @@ const ContactUs = () => {
                 className="textField"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              />
+              /><br></br>
               <TextField
                 variant="outlined"
                 label="Message"
@@ -71,7 +71,7 @@ const ContactUs = () => {
                 className="textField"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-              />
+              /><br></br>
               <Button
                 type="submit"
                 variant="contained"
