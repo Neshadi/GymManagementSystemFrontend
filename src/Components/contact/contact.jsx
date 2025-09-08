@@ -37,7 +37,7 @@ const ContactUs = () => {
         <Typography variant="h4" className="title">
           CONTACT US
         </Typography>
-
+        <br></br>
         <Typography variant="body1" className="description">
           We are here to assist you! Feel free to reach out via phone, email, or 
           by submitting the form below. Our team will get back to you as soon as possible.
