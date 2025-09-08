@@ -1,11 +1,11 @@
 import { Button } from '@material-ui/core';
 import React, { useRef, useState } from 'react';
-import demo6Image from '../../Assests/demo1.jpg';
+import demo10Image from '../../Assests/demo10.jpg';
 import demo2Image from '../../Assests/demo2.jpg';
 import demo3Image from '../../Assests/demo3.jpg';
-import demo5Image from '../../Assests/demo4.jpg';
-import demo4Image from '../../Assests/demo7.jpg';
-import demo1Image from '../../Assests/demo9.jpg';
+import demo5Image from '../../Assests/demo13.jpg';
+import demo4Image from '../../Assests/demo8.jpg';
+import demo1Image from '../../Assests/demo11.jpg';
 import BookDemo from '../demo/demo';
 
 const demoListData = [
@@ -22,7 +22,7 @@ const demoListData = [
   {
     name: 'Michael Davis',
     description: 'Michael is an esteemed group fitness instructor with a wealth of experience in guiding individuals towards their fitness goals. With a reputation for his high-energy and dynamic classes, Michael creates an environment where participants are motivated. ',
-    imageUrl: demo6Image
+    imageUrl: demo10Image
   },
   {
     name: 'Jessic Brown',
@@ -31,7 +31,7 @@ const demoListData = [
   },
   {
     name: 'Daniel Garcia',
-    description: 'Daniel is a knowledgeable martial arts instructor with expertise in various disciplines such as kickboxing and Muay Thai. He empowers clients with self-defense skills while promoting discipline, focus, and confidence.',
+    description: 'Daniel is a knowledgeable martial arts instructor with expertise in various disciplines such as kickboxing and Muay Thai. He empowers clients with self-defense skills while promoting discipline, focus, courage, and confidence.',
     imageUrl: demo5Image
   },
   {
@@ -83,8 +83,8 @@ const DemoList = () => {
                 margin: '8px',
                 border: '1px solid #ccc',
                 borderRadius: '4px',
-                width: '435px',
-                height: '435px',
+                width: '335px',
+                height: '400px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -101,7 +101,7 @@ const DemoList = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <img src={demo.imageUrl} alt={demo.name} style={{ width: '70%', height: '70%', objectFit: 'cover' }} />
+              <img src={demo.imageUrl} alt={demo.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <h3 style={{ marginBottom: '8px', textAlign: 'center' }}>{demo.name}</h3>
               <p style={{ marginBottom: '8px', textAlign: 'center', textAlign: 'justify' }}>{demo.description}</p>
             </div>

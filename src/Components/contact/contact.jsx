@@ -65,7 +65,7 @@ const ContactUs = () => {
                 variant="outlined"
                 label="Message"
                 fullWidth
-                multiline
+                // multiline
                 rows={4}
                 required
                 className="textField"
