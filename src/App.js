@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, HashRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import About from './Components/about/about';
 import ContactUs from './Components/contact/contact';
 import DemoList from './Components/demo-list/demo-list';
@@ -18,36 +18,36 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-
+        
         <Routes>
+          
           <Route path="/personal-training" element={<PersonalTraining />} />
-          {/* <Route path="/demo-list" element={<DemoList />} /> */}
+          {/* <Route path="/demo-list" element={<DemoList/>} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/time-table" element={<GymTimeTable />} />
-          <Route path="/pricing-plan" element={<PricingPlan />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-
+          <Route path="/home" element={<HomePage/>} />
+          <Route path="/services" element={<Services/>} />
+          <Route path="/time-table" element={<GymTimeTable/>} />
+          <Route path="/pricing-plan" element={<PricingPlan/>} />
+          <Route path="/sign-up" element={<SignUp/>} />
+          <Route path="/login" element={<Login/>} />
+          
           {/* Render the main components on the homepage route */}
-          <Route
-            path="/"
-            element={
-              <>
-                <HomePage />
-                <DemoList />
-                <About />
-                <Services />
-                <GymTimeTable />
-                <PricingPlan />
-                <ContactUs />
-              </>
-            }
-          />
-        </Routes>
+          <Route path="/" element={
+            <>
+              <HomePage />
+              <DemoList />
+              <About />
+              <Services/>
+              <GymTimeTable/>
+              <PricingPlan/>
+              <ContactUs />
 
+
+            </>
+          } />
+        </Routes>
+        
         <Footer />
       </div>
     </Router>
