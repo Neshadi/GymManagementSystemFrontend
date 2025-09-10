@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/GymManagementSystemFrontend/static/css/main.4702b771.css",
+    "main.js": "/GymManagementSystemFrontend/static/js/main.dcacc1d9.js",
+    "static/js/239.abea7c39.chunk.js": "/GymManagementSystemFrontend/static/js/239.abea7c39.chunk.js",
+    "static/js/213.6311fd70.chunk.js": "/GymManagementSystemFrontend/static/js/213.6311fd70.chunk.js",
+    "static/js/455.af00d892.chunk.js": "/GymManagementSystemFrontend/static/js/455.af00d892.chunk.js",
+    "static/js/453.2326f6ee.chunk.js": "/GymManagementSystemFrontend/static/js/453.2326f6ee.chunk.js",
+    "static/media/Gym1.mp4": "/GymManagementSystemFrontend/static/media/Gym1.810d342b35c66141fa61.mp4",
+    "static/media/demo11.jpg": "/GymManagementSystemFrontend/static/media/demo11.c16f2c360e0ef6c5d627.jpg",
+    "static/media/demo13.jpg": "/GymManagementSystemFrontend/static/media/demo13.3b6031ef40a0deb55e18.jpg",
+    "static/media/demo10.jpg": "/GymManagementSystemFrontend/static/media/demo10.3f1bcae220a8ac72b41f.jpg",
+    "static/media/Expert_Trainners.jpg": "/GymManagementSystemFrontend/static/media/Expert_Trainners.9fe9468364974f7b2997.jpg",
+    "static/media/Gym_Facility.jpg": "/GymManagementSystemFrontend/static/media/Gym_Facility.fd9def9062ee296ce972.jpg",
+    "static/media/Group Classes.jpg": "/GymManagementSystemFrontend/static/media/Group Classes.b03ed9d06b992d6ea50a.jpg",
+    "static/media/Personal Training.jpg": "/GymManagementSystemFrontend/static/media/Personal Training.1d914c8717852f8778d7.jpg",
+    "static/media/demo2.jpg": "/GymManagementSystemFrontend/static/media/demo2.18e2315412d62e9e525a.jpg",
+    "static/media/demo3.jpg": "/GymManagementSystemFrontend/static/media/demo3.71b0d47e663a53cdac51.jpg",
+    "static/media/demo8.jpg": "/GymManagementSystemFrontend/static/media/demo8.d257846be9ef71d316b1.jpg",
+    "static/media/Nutritional Guidance.jpg": "/GymManagementSystemFrontend/static/media/Nutritional Guidance.7919bb2756b6d95dd1d8.jpg",
+    "index.html": "/GymManagementSystemFrontend/index.html",
+    "main.4702b771.css.map": "/GymManagementSystemFrontend/static/css/main.4702b771.css.map",
+    "main.dcacc1d9.js.map": "/GymManagementSystemFrontend/static/js/main.dcacc1d9.js.map",
+    "239.abea7c39.chunk.js.map": "/GymManagementSystemFrontend/static/js/239.abea7c39.chunk.js.map",
+    "213.6311fd70.chunk.js.map": "/GymManagementSystemFrontend/static/js/213.6311fd70.chunk.js.map",
+    "455.af00d892.chunk.js.map": "/GymManagementSystemFrontend/static/js/455.af00d892.chunk.js.map",
+    "453.2326f6ee.chunk.js.map": "/GymManagementSystemFrontend/static/js/453.2326f6ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4702b771.css",
+    "static/js/main.dcacc1d9.js"
+  ]
+}
