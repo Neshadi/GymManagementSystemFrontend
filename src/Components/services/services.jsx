@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     textAlign: 'center',
     fontWeight: 'bold',
-    textTransform: 'uppercase', // add this
-
+    textTransform: 'uppercase',
+    color: '#fff',
   },
   media: {
     paddingTop: '56.25%', // 16:9 aspect ratio
@@ -25,22 +25,32 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    height: '100%', // Ensure the card takes up full height
-    transition: 'transform 0.3s ease', // Add transition to transform property
+    height: '100%',
+    transition: 'transform 0.3s ease',
     '&:hover': {
-      transform: 'scale(1.15)', // Scale up the card slightly on hover
+      transform: 'scale(1.15)',
     },
   },
   content: {
-    flexGrow: 1, // Allow content to grow vertically
+    flexGrow: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.9)', // Slightly transparent black background
+    padding: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  cardTitle: {
+    color: '#fff', // White title text
+    fontWeight: 'bold',
+  },
+  cardDescription: {
+    color: '#fff', // White description text
+    marginTop: theme.spacing(1),
   },
 }));
 
 const Services = () => {
   const classes = useStyles();
-
-
-  
 
   return (
     <div className={classes.root} id="services">
@@ -48,8 +58,8 @@ const Services = () => {
         <Typography variant="h4" className={classes.title}>
           SERVICES
         </Typography>
-        <Typography variant="body1" paragraph>
-          At our gym, we offer a wide range of services to help you reach your fitness goals. From personal training to group classes, nutritional guidelines have something for everyone.
+        <Typography variant="body1" paragraph style={{ color: '#fff' }}>
+          At our gym, we offer a wide range of services to help you reach your fitness goals. From personal training to group classes, nutritional guidance has something for everyone.
         </Typography>
         
         <Grid container spacing={4}>
@@ -59,13 +69,14 @@ const Services = () => {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.media}
-                  // image="https://www.bodybuilding.com/images/2020/january/what-the-best-personal-trainers-know-that-you-dont-header-830x467.jpg"
                   image={Personal_Training}
                   title="Personal Training"
                 />
                 <CardContent className={classes.content}>
-                  <Typography variant="h6">Personal Training</Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography variant="h6" className={classes.cardTitle}>
+                    Personal Training
+                  </Typography>
+                  <Typography variant="body2" className={classes.cardDescription} component="p">
                     Get one-on-one training sessions with our certified trainers to reach your personal fitness goals faster.
                   </Typography>
                 </CardContent>
@@ -73,19 +84,19 @@ const Services = () => {
             </Link>
           </Grid>
           
-
           {/* Group Classes */}
           <Grid item xs={12} sm={6} md={4}>
             <Card className={classes.card}>
               <CardMedia
                 className={classes.media}
-                // image="https://c4.wallpaperflare.com/wallpaper/1017/46/488/group-fitness-class-located-step-wallpaper-preview.jpg"
                 image={Group_Classes}
                 title="Group Classes"
               />
               <CardContent className={classes.content}>
-                <Typography variant="h6">Group Classes</Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="h6" className={classes.cardTitle}>
+                  Group Classes
+                </Typography>
+                <Typography variant="body2" className={classes.cardDescription} component="p">
                   Join our group fitness classes for a fun and motivating workout experience. We offer yoga, HIIT, pilates, and more.
                 </Typography>
               </CardContent>
@@ -97,13 +108,14 @@ const Services = () => {
             <Card className={classes.card}>
               <CardMedia
                 className={classes.media}
-                // image="https://sites.psu.edu/crp5406passion/files/2017/10/584f0898c8c30.image-2c96lgo-300x200.jpg"
                 image={Nutritional_Guidance}
                 title="Nutritional Guidance"
               />
               <CardContent className={classes.content}>
-                <Typography variant="h6">Nutritional Guidance</Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="h6" className={classes.cardTitle}>
+                  Nutritional Guidance
+                </Typography>
+                <Typography variant="body2" className={classes.cardDescription} component="p">
                   Work with our nutrition experts to create a personalized meal plan that complements your fitness routine.
                 </Typography>
               </CardContent>
