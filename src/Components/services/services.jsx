@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     textAlign: 'center',
     fontWeight: 'bold',
+    textTransform: 'uppercase', // add this
+
   },
   media: {
     paddingTop: '56.25%', // 16:9 aspect ratio

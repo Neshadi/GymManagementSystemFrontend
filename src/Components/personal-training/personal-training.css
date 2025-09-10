@@ -1,156 +1,130 @@
+/* Root Container */
 .personal-training-root {
-  padding: 32px 16px;
+  padding: 48px 16px;
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0e0e0e; /* dark background */
+  color: #e0e0e0; /* light text */
 }
 
+/* Titles */
 .personal-training-title {
+  text-align: left;
+  font-weight: 700;
+  color: #ff6a00; /* bright accent for dark theme */
   margin-bottom: 32px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.personal-training-section {
-  margin-bottom: 32px;
+  font-size: 2.5rem;
 }
 
 .personal-training-section-title {
-  margin-bottom: 16px;
   text-align: center;
+  font-weight: 600;
+  color: #ffa500; /* slightly lighter accent */
+  margin-bottom: 24px;
+  font-size: 1.8rem;
 }
 
-.personal-training-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Intro Paragraph */
+.personal-training-intro {
+  text-align: left;
+  color: #ccc;
+  max-width: 1900px;
+  margin: 0 0 40px;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
 
-.personal-training-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Testimonials */
+.testimonial-card {
+  background: rgba(233, 11, 11, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 
-.personal-training-media {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.15);
 }
 
+.testimonial-comment {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 12px;
+  color: #000000; /* highlight comments */
+}
+
+.testimonial-client {
+  font-weight: 500;
+  text-align: right;
+  opacity: 0.8;
+  color: #61605e;
+}
+
+/* Training Lists */
+.training-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.training-list li {
+  margin-bottom: 12px;
+}
+
+/* Media / Video */
 .personal-training-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  padding-left: 420px;
-  padding-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255,255,255,0.05);
+  overflow: hidden;
 }
 
 .personal-training-video iframe {
   width: 100%;
-  max-width: 100%; /* Ensure it doesn’t exceed container width */
-  height: 250px; /* Set your desired height */
-  border: none; /* Remove default border if needed */
+  height: 280px;
+  border: none;
+  border-radius: 16px;
 }
 
 
-.testimonial-card {
-  background-color: #f9f9f9; /* Light background */
-  border: 1px solid #e0e0e0; /* Light border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
-  padding: 16px;
+/* General Card Hover Effects */
+.card:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
-.testimonial-card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+/* Responsive */
+@media (max-width: 960px) {
+  .personal-training-title {
+    font-size: 2rem;
+  }
+  .personal-training-section-title {
+    font-size: 1.5rem;
+  }
+  .personal-training-video iframe {
+    height: 240px;
+  }
 }
 
-.testimonial-card .MuiTypography-body1 {
-  color: #333; /* Dark text for comment */
-  font-style: italic; /* Italic style for comment */
-  margin-bottom: 8px;
-}
-
-.testimonial-card .MuiTypography-body2 {
-  color: #555; /* Darker grey for client name */
-  text-align: right; /* Align client name to the right */
-}
-
-.testimonial-card {
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Gradient background */
-  color: white; /* White text color */
-  padding: 20px; /* Increase padding */
-}
-
-.testimonial-card .MuiTypography-body1 {
-  font-size: 1.2em; /* Increase comment font size */
-  margin-bottom: 10px; /* Increase bottom margin */
-}
-
-.testimonial-card .MuiTypography-body2 {
-  font-size: 1em; /* Slightly increase client name font size */
-  color: #fffa; /* Semi-transparent white color */
-}
-
-/* Responsive styles */
 @media (max-width: 600px) {
   .personal-training-root {
-      padding: 16px 8px;
+    padding: 24px 12px;
   }
-
   .personal-training-title {
-      font-size: 1.5rem;
+    font-size: 1.8rem;
   }
-
   .personal-training-section-title {
-      font-size: 1.25rem;
+    font-size: 1.3rem;
   }
-
-  .personal-training-media {
-      height: 150px;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 960px) {
-  .personal-training-title {
-      font-size: 2rem;
-  }
-
-  .personal-training-section-title {
-      font-size: 1.5rem;
-  }
-
-  .personal-training-media {
-      height: 180px;
-  }
-}
-
-@media (min-width: 960px) {
-  .personal-training-title {
-      font-size: 2.5rem;
-  }
-
-  .personal-training-section-title {
-      font-size: 1.75rem;
-  }
-
-  .personal-training-media {
-      height: 200px;
-  }
-
-  .personal-training-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
   .personal-training-video iframe {
-    width: 100%;
-    height: 250px;
+    height: 200px;
   }
-  
 }

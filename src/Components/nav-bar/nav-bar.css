@@ -1,0 +1,54 @@
+/* Navbar root */
+.navbar-appbar {
+  background-color: rgb(0, 0, 0);
+}
+
+/* Toolbar */
+.navbar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo and title */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-right: 40px; /* space between PowerZone and links */
+}
+
+.navbar-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Desktop buttons */
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* space between each link/button */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Drawer styles */
+.drawer-list {
+  width: 250px;
+}
+
+@media (max-width: 600px) {
+  .navbar-title {
+    font-size: 1.2rem;
+  }
+  .logo-link {
+    margin-right: 16px;
+  }
+  .drawer-list {
+    width: 100%;
+  }
+}

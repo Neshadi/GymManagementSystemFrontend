@@ -57,12 +57,14 @@
 }
 
 .contactDetails {
-  margin-bottom: 20px;
+  display: flex;          /* Make it a flex container */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;  
 }
 
 .contactItem {
   display: flex;
-  align-items: center;
+  text-align:left;     
   margin-bottom: 16px;
 }
 
@@ -74,6 +76,8 @@
 .mapContainer iframe {
   border-radius: 8px;
   margin-top: 16px;
+  margin-bottom: 26px;
+
 }
 
 /* Responsive Adjustments */
