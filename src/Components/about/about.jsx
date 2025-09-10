@@ -72,7 +72,7 @@ const About = () => {
     <div className={classes.root} id="about">
       <Container maxWidth="md">
         <Typography variant="h4" className={classes.title}>
-          WHO WE AREE
+          WHO WE ARE
         </Typography>
         
         <Grid container spacing={4}>
