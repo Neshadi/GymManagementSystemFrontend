@@ -12,6 +12,9 @@ const ContactUs = () => {
   const [message, setMessage] = useState('');
   const [messageAgain, setMessageAgain] = useState('');
 
+  // Hardcoded backend URL
+  const BACKEND_URL = 'https://gymmanagementsystembackend-1.onrender.com';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token'); 
@@ -21,7 +24,7 @@ const ContactUs = () => {
     };
     const user = { fullName, email, message };
     try {
-      const response = await axios.post("http://localhost:8080/user/add", user, { headers }); 
+      const response = await axios.post(`${BACKEND_URL}/user/add`, user, { headers }); 
       console.log(response.data);
       setMessageAgain('Form Submitted Successfully!');
       setTimeout(() => setMessageAgain(''), 2000);
@@ -37,15 +40,15 @@ const ContactUs = () => {
         <Typography variant="h4" className="title">
           CONTACT US
         </Typography>
-        <br></br>
+        <br />
         <Typography variant="body1" className="description">
           We are here to assist you! Feel free to reach out via phone, email, or 
           by submitting the form below. Our team will get back to you as soon as possible.
         </Typography>
-        <br></br>
+        <br />
         <Grid container spacing={4}>
           {/* Form Section */}
-          <Grid item  className="formContainer">
+          <Grid item className="formContainer">
             <form className="form" onSubmit={handleSubmit}>
               <TextField
                 variant="outlined"
@@ -55,7 +58,7 @@ const ContactUs = () => {
                 className="textField"
                 value={fullName}
                 onChange={(e) => setName(e.target.value)}
-              /><br></br>
+              /><br />
               <TextField
                 variant="outlined"
                 label="Email"
@@ -64,7 +67,7 @@ const ContactUs = () => {
                 className="textField"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-              /><br></br>
+              /><br />
               <TextField
                 variant="outlined"
                 label="Message"
@@ -101,7 +104,7 @@ const ContactUs = () => {
           </Grid>
 
           {/* Contact Info & Map Section */}
-          <Grid item  className="contactContainer">
+          <Grid item className="contactContainer">
             <div className="contactDetails">
               <div className="contactItem">
                 <PhoneIcon className="icon" />
