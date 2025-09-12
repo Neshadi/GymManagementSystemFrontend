@@ -18,7 +18,7 @@ const DemoList = () => {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
       try {
-        const response = await axios.get(`https://localhost:8080/demoList/findDemoList`, {
+        const response = await axios.get(`${API_BASE_URL}/demoList/findDemoList`, {
           headers,
         });
         setDemos(response.data);
@@ -90,7 +90,7 @@ const DemoList = () => {
               }}
             >
               <img
-                src={`${API_BASE_URL}${demo.imageUrl}`}
+                src={`https://localhost:8080/images${demo.imageUrl}`}
                 alt={demo.fullName}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
