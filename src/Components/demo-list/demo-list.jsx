@@ -90,7 +90,7 @@ const DemoList = () => {
               }}
             >
               <img
-                src={`https://localhost:8080/images${demo.imageUrl}`}
+                src={`http://localhost:8080${demo.imageUrl}`}
                 alt={demo.fullName}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
