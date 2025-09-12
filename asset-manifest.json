@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GymManagementSystemFrontend/static/css/main.7c8070a8.css",
-    "main.js": "/GymManagementSystemFrontend/static/js/main.e9d58163.js",
+    "main.js": "/GymManagementSystemFrontend/static/js/main.79b1fa0e.js",
     "static/js/239.421ded13.chunk.js": "/GymManagementSystemFrontend/static/js/239.421ded13.chunk.js",
     "static/js/213.d960d0d4.chunk.js": "/GymManagementSystemFrontend/static/js/213.d960d0d4.chunk.js",
     "static/js/455.d9476953.chunk.js": "/GymManagementSystemFrontend/static/js/455.d9476953.chunk.js",
@@ -14,7 +14,7 @@
     "static/media/Nutritional Guidance.jpg": "/GymManagementSystemFrontend/static/media/Nutritional Guidance.7919bb2756b6d95dd1d8.jpg",
     "index.html": "/GymManagementSystemFrontend/index.html",
     "main.7c8070a8.css.map": "/GymManagementSystemFrontend/static/css/main.7c8070a8.css.map",
-    "main.e9d58163.js.map": "/GymManagementSystemFrontend/static/js/main.e9d58163.js.map",
+    "main.79b1fa0e.js.map": "/GymManagementSystemFrontend/static/js/main.79b1fa0e.js.map",
     "239.421ded13.chunk.js.map": "/GymManagementSystemFrontend/static/js/239.421ded13.chunk.js.map",
     "213.d960d0d4.chunk.js.map": "/GymManagementSystemFrontend/static/js/213.d960d0d4.chunk.js.map",
     "455.d9476953.chunk.js.map": "/GymManagementSystemFrontend/static/js/455.d9476953.chunk.js.map",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.7c8070a8.css",
-    "static/js/main.e9d58163.js"
+    "static/js/main.79b1fa0e.js"
   ]
 }
