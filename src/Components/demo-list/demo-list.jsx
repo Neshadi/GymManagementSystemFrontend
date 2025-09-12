@@ -3,30 +3,24 @@ import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import BookDemo from '../demo/demo';
 
+const API_BASE_URL = "https://gymmanagementsystembackend-1.onrender.com";
+
 const DemoList = () => {
   const listRef = useRef(null);
   const [demos, setDemos] = useState([]);
   const [showBookDemo, setShowBookDemo] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  // const [message, setMessage] = useState('');
- 
-    
 
   // Fetch demo list from backend
   useEffect(() => {
     const fetchDemos = async () => {
-       const token = localStorage.getItem('token');
-    if (!token) {
-      alert('No token found. Please log in.');
-      return;
-    }
-    const headers = {
-      'Authorization': `Bearer ${token}`
-    };
+      const token = localStorage.getItem('token');
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
       try {
-        const response = await axios.get("http://localhost:8080/demoList/findDemoList", {
-        headers: headers,
-      });
+        const response = await axios.get(`${API_BASE_URL}/demoList/findDemoList`, {
+          headers,
+        });
         setDemos(response.data);
       } catch (error) {
         console.error("Error fetching demo list:", error);
@@ -38,19 +32,13 @@ const DemoList = () => {
 
   const scrollLeft = () => {
     if (listRef.current) {
-      listRef.current.scrollBy({
-        left: -400,
-        behavior: 'smooth',
-      });
+      listRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (listRef.current) {
-      listRef.current.scrollBy({
-        left: 400,
-        behavior: 'smooth',
-      });
+      listRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
   };
 
@@ -59,12 +47,19 @@ const DemoList = () => {
   };
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '20px', paddingTop: '0px' }} id='demolist'><br/>
+    <div style={{ position: 'relative', overflow: 'hidden', paddingBottom: '20px' }} id="demolist">
+      <br />
       <h1 style={{ textAlign: 'center', margin: '10px' }}>OUR DEMOS</h1>
 
       <div style={{ position: 'relative' }}>
-        <div 
-          style={{ display: 'flex', overflow: 'hidden', scrollBehavior: 'smooth', paddingRight: '30px', paddingTop: '-10px', position: 'relative' }} 
+        <div
+          style={{
+            display: 'flex',
+            overflow: 'hidden',
+            scrollBehavior: 'smooth',
+            paddingRight: '30px',
+            position: 'relative',
+          }}
           ref={listRef}
         >
           {demos.map((demo, index) => (
@@ -94,29 +89,73 @@ const DemoList = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <img src={`http://localhost:8080${demo.imageUrl}`} alt={demo.fullName} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img
+                src={`${API_BASE_URL}${demo.imageUrl}`}
+                alt={demo.fullName}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
               <h3 style={{ marginBottom: '8px', textAlign: 'center' }}>{demo.fullName}</h3>
               <p style={{ marginBottom: '8px', textAlign: 'justify' }}>{demo.description}</p>
-
             </div>
           ))}
         </div>
 
         {/* Scroll buttons */}
-        <div style={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)', width: '60px', height: '60px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 2 }} onClick={scrollLeft}>
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: 0,
+            transform: 'translateY(-50%)',
+            width: '60px',
+            height: '60px',
+            background: 'white',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            zIndex: 2,
+          }}
+          onClick={scrollLeft}
+        >
           <span style={{ color: 'black', fontSize: '24px', fontWeight: 'bold' }}>{'<'}</span>
         </div>
-        <div style={{ position: 'absolute', top: '50%', right: 0, transform: 'translateY(-50%)', width: '60px', height: '60px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 2 }} onClick={scrollRight}>
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            right: 0,
+            transform: 'translateY(-50%)',
+            width: '60px',
+            height: '60px',
+            background: 'white',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            zIndex: 2,
+          }}
+          onClick={scrollRight}
+        >
           <span style={{ color: 'black', fontSize: '24px', fontWeight: 'bold' }}>{'>'}</span>
         </div>
       </div>
 
       <br />
       <div style={{ textAlign: 'center' }}>
-        {showBookDemo ? <BookDemo /> : (
-          <Button 
-            variant="contained" 
-            style={{ color: 'white', fontWeight: 'bold', backgroundColor: isHovered ? 'red' : 'blue', width: '25%' }} 
+        {showBookDemo ? (
+          <BookDemo />
+        ) : (
+          <Button
+            variant="contained"
+            style={{
+              color: 'white',
+              fontWeight: 'bold',
+              backgroundColor: isHovered ? 'red' : 'blue',
+              width: '25%',
+            }}
             onClick={handleClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
