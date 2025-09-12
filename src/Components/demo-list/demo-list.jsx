@@ -18,7 +18,7 @@ const DemoList = () => {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
       try {
-        const response = await axios.get(`${API_BASE_URL}/demoList/findDemoList`, {
+        const response = await axios.get(`https://localhost:8080/demoList/findDemoList`, {
           headers,
         });
         setDemos(response.data);
