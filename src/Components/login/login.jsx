@@ -1,5 +1,4 @@
 import { Avatar, Button, Dialog, DialogContent, Typography } from '@material-ui/core';
-// import CloseIcon from "@material-ui/icons/Close";
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -17,24 +16,29 @@ const Login = ({ handleLoginClose }) => {
 
   const navigate = useNavigate();
 
+  // Backend URL
+  const BACKEND_URL = "https://gymmanagementsystembackend-1.onrender.com";
+
   // Handlers
   const handleLogin = async (event) => {
     event.preventDefault();
     const appusers = { email, password };
 
     try {
-      const response = await axios.post("http://localhost:8080/account/login", appusers, {
+      const response = await axios.post(`${BACKEND_URL}/account/login`, appusers, {
         headers: { "Content-Type": "application/json" }
       });
 
       localStorage.setItem('token', response.data.token); 
       setShowSuccessPopup(true);
+
+      // Hide success popup after 3 seconds
       setTimeout(() => setShowSuccessPopup(false), 3000);
 
       handleLoginClose(); // Close login popup
       navigate('/'); // Navigate home
     } catch (err) {
-      if (err.response) setError(err.response.data.message || "Login failed");
+      if (err.response) setError(err.response.data || "Login failed");
       else setError("Network error. Please try again.");
     }
   };
@@ -44,15 +48,6 @@ const Login = ({ handleLoginClose }) => {
 
   return (
     <Dialog open={true} onClose={handleLoginClose} maxWidth="xs" fullWidth>
-      {/* Close Button at Top */}
-      {/* <DialogTitle disableTypography>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={handleLoginClose} aria-label="close">
-            <CloseIcon />
-          </IconButton>
-        </div>
-      </DialogTitle> */}
-
       <DialogContent>
         <div className="login-container">
           <div className="login-form">
@@ -101,12 +96,7 @@ const Login = ({ handleLoginClose }) => {
         </div>
 
         {/* Signup Dialog */}
-        <Dialog
-          open={signupOpen}
-          onClose={handleSignupClose}
-          maxWidth="xs"
-          Width ="xs"
-        >
+        <Dialog open={signupOpen} onClose={handleSignupClose} maxWidth="xs" fullWidth>
           <DialogContent>
             <SignUp handleClose={handleSignupClose} />
           </DialogContent>
