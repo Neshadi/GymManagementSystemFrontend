@@ -71,7 +71,7 @@ const HomePage = () => {
         </video>
         <Container maxWidth="sm" className={classes.textContent}>
           <Typography component="h1" variant="h2" className={classes.title} gutterBottom style={{ color: 'yellow', textAlign: 'left' }}>
-            EElevate Your Fitness. Transform Your Life.
+            Elevate Your Fitness. Transform Your Life.
           </Typography>
 
           <Typography variant="h5" className={classes.description} paragraph style={{color:'white'}}>
