@@ -116,12 +116,12 @@ const DemoList = () => {
         {showBookDemo ? <BookDemo /> : (
           <Button 
             variant="contained" 
-            style={{ color: 'white !important', fontWeight: 'bold', backgroundColor: isHovered ? 'red' : 'blue', width: '25%' }} 
+            style={{ color: 'white', fontWeight: 'bold', backgroundColor: isHovered ? 'red' : 'blue', width: '25%' }} 
             onClick={handleClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            Book Demo
+            Book a Demo
           </Button>
         )}
       </div>

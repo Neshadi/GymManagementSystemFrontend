@@ -27,6 +27,10 @@
   color: white !important;
 }
 
+.textField textarea {
+  color: white !important;
+}
+
 .textField label {
   color: white !important;
 }
